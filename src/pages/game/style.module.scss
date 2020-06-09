@@ -1,0 +1,14 @@
+.boxContainer {
+    position: relative;
+    margin: 25px auto;
+    width: 90vw;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1px;
+}
+.boxContainer .box {
+    border: 1px solid #ccc;
+    height: calc( (90vw - 5px) / 4);
+    max-height: 150px;
+}
