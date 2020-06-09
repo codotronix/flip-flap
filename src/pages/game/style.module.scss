@@ -6,9 +6,38 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1px;
+
+    .box {
+        border: 1px solid #ccc;
+        height: calc( (90vw - 5px) / 4);
+        max-height: 150px;
+
+        .boxInner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+        }
+    }
 }
-.boxContainer .box {
-    border: 1px solid #ccc;
-    height: calc( (90vw - 5px) / 4);
-    max-height: 150px;
+
+.cardFace {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.cardFaceFront {
+    background: lightgreen;
+}
+
+.cardFaceBack {
+    background: skyblue;
+    transform: rotateY( 180deg );
+}
+
+.isFlipped {
+    transform: rotateY(180deg);
 }
