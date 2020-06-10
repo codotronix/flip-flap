@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a157753f28d2635c6c6110722827068a",
+    "revision": "5115b2515bcdf28935c9a0a58e08c69f",
     "url": "/flip-flap/index.html"
   },
   {
-    "revision": "a846d4c83c51df4ec25b",
+    "revision": "04b17c7cd25a0d14a51c",
     "url": "/flip-flap/static/css/main.12a6261a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flip-flap/static/js/2.7cc07aa1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a846d4c83c51df4ec25b",
-    "url": "/flip-flap/static/js/main.51be3dba.chunk.js"
+    "revision": "04b17c7cd25a0d14a51c",
+    "url": "/flip-flap/static/js/main.cfdc12b9.chunk.js"
   },
   {
     "revision": "9feb9e3fac9d48509a50",
