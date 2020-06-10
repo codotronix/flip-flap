@@ -6,6 +6,7 @@ import images from './imageList'
 const Game = props => {
     const [ flippedCards, setFlippedCards ] = useState({})
     const [ cards, setCards ] = useState([])
+    const [ prevClickedIndex, setPrevClickedIndex ] = useState(null)
 
     useEffect(() => {
         let imgList = [...images.list]
@@ -43,7 +44,7 @@ const Game = props => {
             imgUrl: `/${images.root}/${img}`
         }))
 
-        console.log(newCards)
+        // console.log(newCards)
 
         setCards(newCards)
 
@@ -51,26 +52,52 @@ const Game = props => {
 
     // const boxes = new Array(16).fill(9)
 
-    const flipCard = i => setFlippedCards({
-        ...flippedCards,
-        [i]: !flippedCards[i]
-    })
+    const checkIfMatch = i => {
+        if(!prevClickedIndex) {
+            setPrevClickedIndex(i)
+        }
+        else {
+            if(cards[prevClickedIndex].imgUrl === cards[i].imgUrl) {
+                console.log('Yeeee, U got 1 ...')
+                // TODO, MARK THESE 2 DONE/INACTIVE
+
+                
+            }
+            else {
+                //TODO: FLIP-HIDE BOTH THE IMAGE
+
+                console.log('Sorry, no match ...')
+            }
+
+            // Reset the Prev Clicked
+            setPrevClickedIndex(null)
+        }
+    }
+
+    const flipCard = i => {
+        setFlippedCards({
+            ...flippedCards,
+            [i]: !flippedCards[i]
+        })
+
+        // Check if Matching with Previous One
+        checkIfMatch(i)
+    }
 
     return (
         <div>
             <div className={styles.boxContainer}>
             {
-                cards.map(c => 
-                    <div key={c.id} className={styles.box}>
+                cards.map( (c, i) => 
+                    <div key={i} className={styles.box}>
                         <div 
-                            className={clsx(styles.boxInner, flippedCards[c.id] && styles.isFlipped)}
-                            onClick={() => flipCard(c.id)}
+                            className={clsx(styles.boxInner, flippedCards[i] && styles.isFlipped)}
+                            onClick={() => flipCard(i)}
                         >
                             <div 
                                 className={clsx(styles.cardFace, styles.cardFaceFront)}
-                                onClick={() => flipCard(c.id)}
                             >
-                                front
+                                Flip / Flap
                             </div>
 
                             <div 
