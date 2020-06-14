@@ -20,6 +20,7 @@ body {
   font-family: 'Fredericka the Great', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: rgba(9, 108, 252, 1);
 }
 
 code {

@@ -99,7 +99,7 @@ const Game = props => {
                                 <div
                                     className={clsx(styles.cardFace, styles.cardFaceFront)}
                                 >
-                                    <span className={styles.fftxt}>f/f</span>
+                                    <span className={styles.fftxt}>?</span>
                                 </div>
 
                                 <div
