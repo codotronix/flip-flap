@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/flip-flap/precache-manifest.0278a5ac583283e21bfa522bbb23c0bd.js"
+  "/flip-flap/precache-manifest.43ec99a59ae5af710b16c14ac6bb8f37.js"
 );
 
 self.addEventListener('message', (event) => {
