@@ -3,6 +3,8 @@ import clsx from 'clsx'
 import styles from './style.module.scss'
 import images from './imageList'
 
+let clicks = [] // All the clicked card-indices serially stored
+
 const MARK_AS_DONE = 'MARK_AS_DONE'
 const MARK_AS_FLIPPED = 'MARK_AS_FLIPPED'
 
@@ -73,11 +75,7 @@ function cardsReducer(state, action) {
 
 
 const Game = props => {
-    // const [ flippedCards, setFlippedCards ] = useState({})
-    // const [cards, setCards] = useState([])
     const [cards, dispatch] = useReducer(cardsReducer, getInitialState())
-    // const [prevClickedIndex, setPrevClickedIndex] = useState(null)
-    const [allClicks, setAllClicks] = useState([])  // all the clicked indices
 
     const flipCard = i => {
         // if it is a Done card, do nothing
@@ -85,13 +83,14 @@ const Game = props => {
         if (cards[i].isDone || cards[i].isFlipped) return
 
         // Record this click
-        let clicks = [...allClicks, i]
-        setAllClicks(clicks)
+        // let clicks = [...allClicks, i]
+        // setAllClicks(clicks)
+        clicks.push(i)
         console.log('click no. ', clicks.length)
 
         //Check with prev Index, is it a match ?
         let j = clicks[clicks.length - 2]   //1st time it will try to read index -1
-        if (j && isMatch(i, j)) {
+        if (typeof(j) !== 'undefined' && isMatch(i, j)) {
             // Mark them as done
             markAsDone(i)
             markAsDone(j)
