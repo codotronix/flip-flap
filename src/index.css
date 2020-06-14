@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Fredericka the Great';
+  src: url('assets/fonts/FrederickatheGreat-Regular.ttf');
+}
 *,
 *::before,
 *::after {
@@ -13,6 +17,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-family: 'Fredericka the Great', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

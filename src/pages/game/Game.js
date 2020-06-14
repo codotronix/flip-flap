@@ -39,7 +39,7 @@ const getInitialState = () => {
 
     let newCards = doubleList.map((img, i) => ({
         id: i,
-        imgUrl: `/${images.root}/${img}`,
+        imgUrl: `${images.root}/${img}`,
         isFlipped: false
     }))
 
@@ -76,51 +76,8 @@ const Game = props => {
     // const [ flippedCards, setFlippedCards ] = useState({})
     // const [cards, setCards] = useState([])
     const [cards, dispatch] = useReducer(cardsReducer, getInitialState())
-    const [prevClickedIndex, setPrevClickedIndex] = useState(null)
+    // const [prevClickedIndex, setPrevClickedIndex] = useState(null)
     const [allClicks, setAllClicks] = useState([])  // all the clicked indices
-
-    // useEffect(() => {
-    //     let imgList = [...images.list]
-
-    //     // Let's randomly pick 8 images
-    //     // as we are going to have 16 cards, so 8 pair 8 = 16
-    //     while (imgList.length > 8) {
-    //         let i = Math.floor(Math.random() * imgList.length)  // pick a random index
-    //         imgList.splice(i, 1)    // remove that index
-    //     }
-
-    //     // console.log(imgList)
-
-    //     let doubleList = [...imgList, ...imgList]
-
-    //     // console.log(doubleList)
-
-    //     // Shuffle the list 100 times
-    //     for (let i = 0; i < 1000; i++) {
-    //         let j = Math.floor(Math.random() * doubleList.length)
-    //         let k = Math.floor(Math.random() * doubleList.length)
-
-    //         // swap if not equal
-    //         if (j !== k) {
-    //             let temp = doubleList[j]
-    //             doubleList[j] = doubleList[k]
-    //             doubleList[k] = temp
-    //         }
-    //     }
-
-    //     // console.log(doubleList)
-
-    //     let newCards = doubleList.map((img, i) => ({
-    //         id: i,
-    //         imgUrl: `/${images.root}/${img}`,
-    //         isFlipped: false
-    //     }))
-
-    //     // console.log(newCards)
-
-    //     setCards(newCards)
-
-    // }, [])
 
     const flipCard = i => {
         // if it is a Done card, do nothing
@@ -192,8 +149,8 @@ const Game = props => {
                                 <div
                                     className={clsx(styles.cardFace, styles.cardFaceFront)}
                                 >
-                                    F / F
-                            </div>
+                                    <span className={styles.fftxt}>f/f</span>
+                                </div>
 
                                 <div
                                     className={clsx(styles.cardFace, styles.cardFaceBack)}
