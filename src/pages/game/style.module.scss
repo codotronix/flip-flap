@@ -1,3 +1,31 @@
+.pageHeader {
+    text-align: center;
+    margin-top: 15px;
+}
+.scores {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px auto;
+    width: 90vw;
+    max-width: 600px;
+}
+
+.scoreUnit {
+    text-align: center;
+    .scoreUnitName {
+        // border-bottom: 1px solid #000;
+        padding: 5px 10px;
+        background: #ddd;
+        border-radius: 4px;
+        // color: #fff;
+    }
+    .scoreUnitVal {
+        margin-top: 5px;
+        font-weight: bold;
+    }
+}
+
 .boxContainer {
     position: relative;
     margin: 25px auto;

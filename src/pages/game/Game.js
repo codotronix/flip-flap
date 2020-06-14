@@ -1,100 +1,45 @@
 import React, { useState, useReducer } from 'react'
 import clsx from 'clsx'
 import styles from './style.module.scss'
-import images from './imageList'
+import ScoreUnit from './ScoreUnit'
+import { getInitialCards } from './game.service'
+import { cardsReducer, MARK_AS_DONE, MARK_AS_FLIPPED } from './game.reducer'
 
 let clicks = [] // All the clicked card-indices serially stored
 
-const MARK_AS_DONE = 'MARK_AS_DONE'
-const MARK_AS_FLIPPED = 'MARK_AS_FLIPPED'
-
 const getInitialState = () => {
-    let imgList = [...images.list]
-
-    // Let's randomly pick 8 images
-    // as we are going to have 16 cards, so 8 pair 8 = 16
-    while (imgList.length > 8) {
-        let i = Math.floor(Math.random() * imgList.length)  // pick a random index
-        imgList.splice(i, 1)    // remove that index
-    }
-
-    // console.log(imgList)
-
-    let doubleList = [...imgList, ...imgList]
-
-    // console.log(doubleList)
-
-    // Shuffle the list 100 times
-    for (let i = 0; i < 1000; i++) {
-        let j = Math.floor(Math.random() * doubleList.length)
-        let k = Math.floor(Math.random() * doubleList.length)
-
-        // swap if not equal
-        if (j !== k) {
-            let temp = doubleList[j]
-            doubleList[j] = doubleList[k]
-            doubleList[k] = temp
-        }
-    }
-
-    // console.log(doubleList)
-
-    let newCards = doubleList.map((img, i) => ({
-        id: i,
-        imgUrl: `${images.root}/${img}`,
-        isFlipped: false
-    }))
-
-    return newCards
+    return getInitialCards()
 }
-
-function cardsReducer(state, action) {
-    switch (action.type) {
-        case MARK_AS_DONE: {
-            const { index } = action.payload
-            let newCards = [...state]
-            newCards[index] = {
-                ...newCards[index],
-                isDone: true
-            }
-            return newCards
-        }
-        case MARK_AS_FLIPPED: {
-            const { index, isFlipped } = action.payload
-            let newCards = [...state]
-            newCards[index] = {
-                ...newCards[index],
-                isFlipped
-            }
-            return newCards
-        }
-        default:
-            throw new Error();
-    }
-}
-
 
 const Game = props => {
     const [cards, dispatch] = useReducer(cardsReducer, getInitialState())
+
+    const [allClicks, setAllClicks] = useState([])  // Array of all the Cards Indices that user clicks
+    const [repeatClicks, setRepeatClicks] = useState(0) // A Nunber representing Repeat clicks on cards
+    const [matchFound, setMatchFound] = useState(0) // Number of matches so far
 
     const flipCard = i => {
         // if it is a Done card, do nothing
         // if already flipped. do nothing
         if (cards[i].isDone || cards[i].isFlipped) return
 
-        // Record this click
-        // let clicks = [...allClicks, i]
-        // setAllClicks(clicks)
-        clicks.push(i)
+        // Check if it is a repeat click
+        if(allClicks.includes(i)) setRepeatClicks(repeatClicks + 1)
+
+        // Record this click index, [to be tallied with future/next click index]
+        let clicks = [...allClicks, i]
+        setAllClicks(clicks)
+        // clicks.push(i)
         console.log('click no. ', clicks.length)
 
         //Check with prev Index, is it a match ?
         let j = clicks[clicks.length - 2]   //1st time it will try to read index -1
-        if (typeof(j) !== 'undefined' && isMatch(i, j)) {
+        if (!isNaN(j) && isMatch(i, j)) {
             // Mark them as done
             markAsDone(i)
             markAsDone(j)
             console.log('Found 1 ...')
+            setMatchFound(matchFound + 1)
         }
         else {
             markFlipped(i, true)
@@ -102,13 +47,12 @@ const Game = props => {
         }
     }
 
-    const isMatch = (i, j) => {
-        console.log('inside isMatch')
-        console.log('cards[i].imgUrl = ', cards[i].imgUrl)
-        console.log('cards[j].imgUrl = ', cards[j].imgUrl)
-        console.log('returning ', cards[i].imgUrl === cards[j].imgUrl)
-        return cards[i].imgUrl === cards[j].imgUrl
-    }
+    /**
+     * 
+     * @param {Int} i | 
+     * @param {Int} j 
+     */
+    const isMatch = (i, j) => cards[i].imgUrl === cards[j].imgUrl
 
     const markAsDone = i => {
         dispatch({type: MARK_AS_DONE, payload: {index: i}})
@@ -136,7 +80,14 @@ const Game = props => {
 
     return (
         <div>
-            <h2>Flip / Flap</h2>
+            <h2 className={styles.pageHeader}>Flip / Flap</h2>
+            
+            <div className={styles.scores}>
+                <ScoreUnit title="Clicks" value={allClicks.length} />
+                <ScoreUnit title="Repeat Clicks" value={repeatClicks} />
+                <ScoreUnit title="Matches" value={`${matchFound} / 8`} />
+            </div>
+
             <div className={styles.boxContainer}>
                 {
                     cards.map((c, i) =>
