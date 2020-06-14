@@ -1,7 +1,7 @@
 import React, { useState, useReducer } from 'react'
-import clsx from 'clsx'
 import styles from './style.module.scss'
 import ScoreUnit from './ScoreUnit'
+import Card from './Card'
 import { getInitialCards } from './game.service'
 import { cardsReducer, MARK_AS_DONE, MARK_AS_FLIPPED } from './game.reducer'
 
@@ -91,24 +91,7 @@ const Game = props => {
             <div className={styles.boxContainer}>
                 {
                     cards.map((c, i) =>
-                        <div key={i} className={styles.box}>
-                            <div
-                                className={clsx(styles.boxInner, (c.isFlipped || c.isDone) && styles.isFlipped)}
-                                onClick={() => flipCard(i)}
-                            >
-                                <div
-                                    className={clsx(styles.cardFace, styles.cardFaceFront)}
-                                >
-                                    <span className={styles.fftxt}>?</span>
-                                </div>
-
-                                <div
-                                    className={clsx(styles.cardFace, styles.cardFaceBack)}
-                                >
-                                    <img className={styles.gameImg} src={c.imgUrl} />
-                                </div>
-                            </div>
-                        </div>
+                        <Card key={i} card={c} onFlip={() => flipCard(i)} />
                     )
                 }
             </div>
