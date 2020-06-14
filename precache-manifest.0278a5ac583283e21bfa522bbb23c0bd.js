@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "597d98644de41dd8742753b5cb8b35df",
+    "revision": "b86144028d7827ab2b6d5cda2f935458",
     "url": "/flip-flap/index.html"
   },
   {
-    "revision": "da45eaf63602a34c57fa",
+    "revision": "542da4894baae800ea2f",
     "url": "/flip-flap/static/css/main.881d86da.chunk.css"
   },
   {
-    "revision": "91772505a70342065e37",
-    "url": "/flip-flap/static/js/2.7cc07aa1.chunk.js"
+    "revision": "3f5ec7fcbcdcbcde5f61",
+    "url": "/flip-flap/static/js/2.85ae6641.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/flip-flap/static/js/2.7cc07aa1.chunk.js.LICENSE.txt"
+    "url": "/flip-flap/static/js/2.85ae6641.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "da45eaf63602a34c57fa",
-    "url": "/flip-flap/static/js/main.d0dbc977.chunk.js"
+    "revision": "542da4894baae800ea2f",
+    "url": "/flip-flap/static/js/main.f79566fa.chunk.js"
   },
   {
     "revision": "9feb9e3fac9d48509a50",
