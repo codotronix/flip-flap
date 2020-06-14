@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "05d83292a80e3552669dcbd6028d5406",
+    "revision": "597d98644de41dd8742753b5cb8b35df",
     "url": "/flip-flap/index.html"
   },
   {
-    "revision": "7d670e4be1087912db15",
-    "url": "/flip-flap/static/css/main.12a6261a.chunk.css"
+    "revision": "da45eaf63602a34c57fa",
+    "url": "/flip-flap/static/css/main.881d86da.chunk.css"
   },
   {
     "revision": "91772505a70342065e37",
@@ -16,11 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flip-flap/static/js/2.7cc07aa1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d670e4be1087912db15",
-    "url": "/flip-flap/static/js/main.fedd1103.chunk.js"
+    "revision": "da45eaf63602a34c57fa",
+    "url": "/flip-flap/static/js/main.d0dbc977.chunk.js"
   },
   {
     "revision": "9feb9e3fac9d48509a50",
     "url": "/flip-flap/static/js/runtime-main.58a57a92.js"
+  },
+  {
+    "revision": "9122299e476671f970e1670bd7b900c8",
+    "url": "/flip-flap/static/media/FrederickatheGreat-Regular.9122299e.ttf"
   }
 ]);
