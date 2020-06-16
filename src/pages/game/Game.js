@@ -5,8 +5,6 @@ import Card from './Card'
 import { getInitialCards } from './game.service'
 import { cardsReducer, MARK_AS_DONE, MARK_AS_FLIPPED } from './game.reducer'
 
-let clicks = [] // All the clicked card-indices serially stored
-
 const getInitialState = () => {
     return getInitialCards()
 }
