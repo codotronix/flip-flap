@@ -2,6 +2,9 @@
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/codotronix/flip-flap/blob/master/LICENSE)
 [![Made With Love](https://img.shields.io/badge/Made%20With-Love-orange.svg)](https://github.com/codotronix/flip-flap)
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/codotronix/flip-flap)
+[![Build Status](https://travis-ci.com/codotronix/flip-flap.svg?branch=master)](https://travis-ci.com/codotronix/flip-flap)
+[![codecov](https://codecov.io/gh/codotronix/flip-flap/branch/master/graph/badge.svg)](https://codecov.io/gh/codotronix/flip-flap)
+
 
 # flip / flap
 A game of luck, guess, memory and match. 
