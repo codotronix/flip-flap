@@ -15,7 +15,7 @@ const Card = props => {
                 </div>
 
                 <div className={clsx(styles.cardFace, styles.cardFaceBack)}>
-                    <img className={styles.gameImg} src={c.imgUrl} />
+                    <img className={styles.gameImg} src={card.imgUrl} />
                 </div>
             </div>
         </div>
