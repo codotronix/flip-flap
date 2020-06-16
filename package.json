@@ -8,7 +8,6 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "clsx": "^1.1.1",
-    "gh-pages": "^3.0.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -20,7 +19,15 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
+    "test-cov": "react-scripts test --coverage --watchAll=false",
+    "test-codecov": "react-scripts test --coverage --watchAll=false && codecov",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "codecov": "^3.7.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "gh-pages": "^3.0.0"
   },
   "eslintConfig": {
     "extends": "react-app"

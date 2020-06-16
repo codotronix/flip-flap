@@ -15,7 +15,7 @@ const Card = props => {
                 </div>
 
                 <div className={clsx(styles.cardFace, styles.cardFaceBack)}>
-                    <img className={styles.gameImg} src={card.imgUrl} />
+                    <img className={styles.gameImg} src={card.imgUrl} alt="Random Card Image"/>
                 </div>
             </div>
         </div>
