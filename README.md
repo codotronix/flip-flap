@@ -1,4 +1,4 @@
-[![Project Type - Game](https://img.shields.io/badge/Type-GAME-blueviolet.svg)](https://github.com/codotronix/flip-flap)
+[![Project Type - Game](https://img.shields.io/badge/Type-GAME-blueviolet.svg)](https://codotronix.github.io/flip-flap/)
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/codotronix/flip-flap/blob/master/LICENSE)
 [![Made With Love](https://img.shields.io/badge/Made%20With-Love-orange.svg)](https://github.com/codotronix/flip-flap)
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/codotronix/flip-flap)
