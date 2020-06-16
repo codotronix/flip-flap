@@ -5,10 +5,27 @@ It is a copy of a game I played long back on Windows Vista (Don't remember the n
 
 I have wrote the game in React JS from scratch. So, though the game idea is not mine, the implementation is entirely mine :-)
 
+
+
 ## Menu
+
+- [How to Play](https://github.com/codotronix/flip-flap#how-to-play)
+- [Features and Plans](https://github.com/codotronix/flip-flap#features--plans)
+
 
 
 ## How to play
+
+- Clicking on any card will reveal an image
+
+- Each image is hiding behind exactly 2 cards
+
+- The goal is to find all those pairs of cards which are holding the same image
+
+- To score a match, each card of a pair must be clicked consecutively
+
+- The goal is to have as less count as possible for clicks and repeat clicks
+
 
 ## Features / Plans
 
