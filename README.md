@@ -47,8 +47,8 @@ I have wrote the game in React JS from scratch. So, though the game idea is not 
 
 - [ ] Game instructions / how to play
 
-- [ ] Implement CI/CD with `Travis`
+- [x] Implement CI/CD with `Travis`
 
-- [ ] Setup code unit testing coverage reporting with `Codecov` 
+- [x] Setup code unit testing coverage reporting with `Codecov` 
 
 - [ ] Complete this readme file
