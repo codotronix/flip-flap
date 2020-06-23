@@ -8,5 +8,5 @@ node_js:
 #   - npm install -g codecov
 script:
   - npm i
-  - npm run build
+  - npm run deploy  # deploy automatically runs pre-deploy, which is actually npm run build
   - npm run test-codecov
