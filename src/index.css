@@ -1,8 +1,5 @@
-@font-face {
-  font-family: 'Fredericka the Great';
-  src: url('assets/fonts/FrederickatheGreat-Regular.ttf');
-}
-*,
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
 *::before,
 *::after {
   padding: 0;
@@ -17,10 +14,14 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  font-family: 'Fredericka the Great', cursive;
+  /* font-family: 'Fredericka the Great', cursive;
+  font-family: 'Press Start 2P', cursive; */
+  font-family: 'Nova Square', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgba(9, 108, 252, 1);
+  color: mediumblue;
+  background: url('./assets/bg/landscape-2270913.png') 0 0;
+  background-size: cover;
 }
 
 code {
