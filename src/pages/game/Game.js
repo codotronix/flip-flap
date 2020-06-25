@@ -14,7 +14,7 @@ const getInitialState = () => {
 const Game = props => {
     const [cards, dispatch] = useReducer(cardsReducer, getInitialState())
 
-    const [screen, setScreen] = useState('END')   // 'START' / 'GAME' / 'END'
+    const [screen, setScreen] = useState('START')   // 'START' / 'GAME' / 'END'
     const [allClicks, setAllClicks] = useState([])  // Array of all the Cards Indices that user clicks
     const [repeatClicks, setRepeatClicks] = useState(0) // A Nunber representing Repeat clicks on cards
     const [matchFound, setMatchFound] = useState(0) // Number of matches so far
