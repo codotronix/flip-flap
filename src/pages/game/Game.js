@@ -1,9 +1,11 @@
 import React, { useState, useReducer } from 'react'
 import styles from './style.module.scss'
+import StartPage from './StartModal'
+import EndModal from './EndModal'
 import ScoreUnit from './ScoreUnit'
 import Card from './Card'
 import { getInitialCards } from './game.service'
-import { cardsReducer, MARK_AS_DONE, MARK_AS_FLIPPED } from './game.reducer'
+import { cardsReducer, MARK_AS_DONE, MARK_AS_FLIPPED, INIT_GAME_STATE } from './game.reducer'
 
 const getInitialState = () => {
     return getInitialCards()
@@ -12,6 +14,7 @@ const getInitialState = () => {
 const Game = props => {
     const [cards, dispatch] = useReducer(cardsReducer, getInitialState())
 
+    const [screen, setScreen] = useState('START')   // 'START' / 'GAME' / 'END'
     const [allClicks, setAllClicks] = useState([])  // Array of all the Cards Indices that user clicks
     const [repeatClicks, setRepeatClicks] = useState(0) // A Nunber representing Repeat clicks on cards
     const [matchFound, setMatchFound] = useState(0) // Number of matches so far
@@ -38,11 +41,29 @@ const Game = props => {
             markAsDone(j)
             console.log('Found 1 ...')
             setMatchFound(matchFound + 1)
+
+            // ALL 8 MATCHES FOUND
+            if( (matchFound + 1) === 8) {
+                setScreen('END')
+            }
         }
         else {
             markFlipped(i, true)
             console.log('Nope ...')
         }
+    }
+
+    /**
+     * This function will initialize everything 
+     * and start / restart the game
+     * @param {*} e 
+     */
+    const startGame = e => {
+        dispatch({ type: INIT_GAME_STATE })
+        setAllClicks([])
+        setRepeatClicks(0)
+        setMatchFound(0)
+        setScreen('GAME')
     }
 
     /**
@@ -93,6 +114,20 @@ const Game = props => {
                     )
                 }
             </div>
+
+            { 
+                (screen === 'START') &&
+                <StartPage 
+                    handleStart={e => startGame()} 
+                />
+            }
+
+            { 
+                (screen === 'END') &&
+                <EndModal 
+                    handleStart={e => startGame()} 
+                />
+            }
 
         </div>
     )
