@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react'
+import clsx from 'clsx'
 import styles from './style.module.scss'
 import StartPage from './StartModal'
 import EndModal from './EndModal'
@@ -104,7 +105,7 @@ const Game = props => {
                 <h2 className={styles.pageHeader}>Flip / Flap</h2>
             }
             
-            <div className={styles.scores}>
+            <div className={clsx(styles.scores, (screen === 'START') && 'hidden' )}>
                 <ScoreUnit title="Clicks" value={allClicks.length} />
                 <ScoreUnit title="Repeat Clicks" value={repeatClicks} />
                 <ScoreUnit title="Matches" value={`${matchFound} / 8`} />
