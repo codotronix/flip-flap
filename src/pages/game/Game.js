@@ -99,7 +99,10 @@ const Game = props => {
 
     return (
         <div>
-            <h2 className={styles.pageHeader}>Flip / Flap</h2>
+            { 
+                (screen === 'GAME' || screen === 'END') && 
+                <h2 className={styles.pageHeader}>Flip / Flap</h2>
+            }
             
             <div className={styles.scores}>
                 <ScoreUnit title="Clicks" value={allClicks.length} />
