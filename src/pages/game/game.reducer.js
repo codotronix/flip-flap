@@ -1,7 +1,10 @@
+import { getInitialCards } from './game.service'
 
 // ACTION TYPES
 export const MARK_AS_DONE = 'MARK_AS_DONE'
 export const MARK_AS_FLIPPED = 'MARK_AS_FLIPPED'
+export const INIT_GAME_STATE = 'INIT_GAME_STATE'
+
 
 /**
  * Just like a Redux reducer, 
@@ -36,6 +39,9 @@ export const cardsReducer = (state, action) => {
                 isFlipped
             }
             return newCards
+        }
+        case INIT_GAME_STATE: {
+            return getInitialCards()
         }
         default:
             throw new Error();

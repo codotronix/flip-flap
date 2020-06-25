@@ -1,6 +1,13 @@
 :root {
-    --scoreBgColor: rgba(0, 0, 207, .7)
+    --scoreBgColor: rgba(0, 0, 207, .7);
+    --themePrimary: rgb(0, 183, 255);
 }
+
+@mixin midSectionWide {
+    width: 90vw;
+    max-width: 600px;
+}
+
 .pageHeader {
     text-align: center;
     margin-top: 15px;
@@ -8,7 +15,7 @@
 }
 @keyframes zigzag {
     0% { transform: rotateY(0deg);}
-    50% { transform: rotateY(90deg);}
+    50% { transform: rotateY(180deg);}
     100% { transform: rotateY(0deg);}
 }
 .scores {
@@ -42,8 +49,9 @@
 .boxContainer {
     position: relative;
     margin: 25px auto;
-    width: 90vw;
-    max-width: 600px;
+    // width: 90vw;
+    // max-width: 600px;
+    @include midSectionWide();
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 3px;
@@ -102,4 +110,68 @@
 
 .isFlipped {
     transform: rotateY(180deg);
+}
+
+.startPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(135, 206, 250, 0.7);
+    z-index: 9999;
+    .inner {
+        @include midSectionWide();
+        border: 10px double var(--scoreBgColor);
+        background: var(--themePrimary);
+        max-height: 90vh;
+        margin: 20px auto;
+        border-radius: 9px;
+        padding: 20px 25px;
+        text-align: center;
+        h1 {
+            border-bottom: 3px dotted var(--scoreBgColor);
+            padding-bottom: 10px;
+        }
+        h1 span {
+            display: inline-block;
+            padding: 0 5px;
+        }
+        .flipped {
+            animation: flipflap 5s linear 0s infinite;
+        }
+        .flapped {
+            animation: flipflap 5s linear 2.5s infinite;
+        }
+        .instruction {
+            width: 230px;
+            background: yellow;
+            padding: 15px;
+            margin: 15px auto;
+            border-radius: 30px;
+        }
+        .imgContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .instructorImg {
+            height: 150px;
+        }
+        .startGame {
+            font-size: 50px;
+            height: 66px;
+            width: 66px;
+            border-radius: 50%;
+            background: yellow;
+
+        }
+    }
+}
+@keyframes flipflap {
+    0% { transform: rotateY(0deg);}
+    20% { transform: rotateY(180deg);}
+    50% { transform: rotateY(180deg);}
+    75% { transform: rotateY(0deg);}
+    100% { transform: rotateY(0deg);}
 }
