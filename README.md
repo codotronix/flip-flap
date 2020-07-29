@@ -47,14 +47,18 @@ I have wrote the game in React JS from scratch. So, though the game idea is not 
 
 - [x] In game scores / statistics e.g. Total Cicks, Repeat Clicks, Matches Found etc
 
-- [ ] Home / landing screen
+- [x] Home / landing screen
 
-- [ ] Congratulation / Winner's Screen
+- [x] Congratulation / Winner's Screen
 
-- [ ] Game instructions / how to play
+- [x] Game instructions / how to play
 
 - [x] Implement CI/CD with `Travis`
 
 - [x] Setup code unit testing coverage reporting with `Codecov` 
 
-- [ ] Complete this readme file
+- [x] Complete this readme file
+
+- [ ] Achieve 80% Unit Test Coverage
+
+- [ ] Add in-game music(s)
