@@ -16,10 +16,16 @@ I have wrote the game in React JS from scratch. So, though the game idea is not 
 
 
 ## Menu
-
+- [Screenshots](https://github.com/codotronix/flip-flap#screenshots)
 - [How to Play](https://github.com/codotronix/flip-flap#how-to-play)
 - [Features and Plans](https://github.com/codotronix/flip-flap#features--plans)
 
+
+## Screenshots
+![Flip-Flap Screenshot 1](https://github.com/codotronix/flip-flap/blob/master/Extra/screenshots/v001/ff1.PNG)
+![Flip-Flap Screenshot 2](https://github.com/codotronix/flip-flap/blob/master/Extra/screenshots/v001/ff2.PNG)
+![Flip-Flap Screenshot 3](https://github.com/codotronix/flip-flap/blob/master/Extra/screenshots/v001/ff3.PNG)
+![Flip-Flap Screenshot 4](https://github.com/codotronix/flip-flap/blob/master/Extra/screenshots/v001/ff4.PNG)
 
 
 ## How to play
