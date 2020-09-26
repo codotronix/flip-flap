@@ -1,6 +1,6 @@
 {
-  "short_name": "Flip / Flap",
-  "name": "Flip / Flap",
+  "short_name": "FlipFlap",
+  "name": "FlipFlap",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "flipflap-192x.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "flipflap-512x.png",
       "type": "image/png",
       "sizes": "512x512"
     }
